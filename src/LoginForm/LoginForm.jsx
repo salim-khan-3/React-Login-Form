@@ -7,8 +7,10 @@ export const LoginForm = () =>{
     const [username,setUserName] = useState("");
     const [password,setPassword] = useState("");
 
+
+    //todo submit form
     const handleFormSubmit = (e) =>{
-        e.preventDefaoult();
+        e.preventDefault();
 
         const userData = {
             username,
@@ -16,6 +18,7 @@ export const LoginForm = () =>{
         }
         console.log(userData);
     }
+
     return(
         <section>
             <div className="bdfkjd">
@@ -27,7 +30,7 @@ export const LoginForm = () =>{
                             <input type="text" name="username" placeholder="Enter Your username" autoComplete="off" value={username} onChange={(e)=>setUserName(e.target.value)} />
 
                             <label htmlFor="password">Password</label>
-                            <input type="password" name="password" placeholder="Enter Your password" autoComplete="off" value={password} onChange={(e)=>setPassword(e.target.password)} />
+                            <input type="password" name="password" placeholder="Enter Your password" autoComplete="off" value={password} onChange={(e)=>setPassword(e.target.value)} />
 
                             <button className="btn">Login</button>
                         </form>
